@@ -1,4 +1,4 @@
-# PROJECTO EMPRESA ABC RETAIL
+# PROJECTO ADMINISTRACIÓN DE COLAS
 Este es un sistema con efectos educativos la información presentada no pertenece a nínguna persona en particular.
 
 ---
