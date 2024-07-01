@@ -6,12 +6,14 @@ public class Cliente {
     String nombre;
     String apellido;
     String tipoAtencion;
+    int tiempoAtencion;
 
     public Cliente(int dni, String nombre, String apellido) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoAtencion = null;
+        this.tiempoAtencion = 0;
     }
 
 
@@ -42,12 +44,21 @@ public class Cliente {
         this.tipoAtencion = tipoAtencion;
     }
 
+    public int getTiempoAtencion() {
+        return tiempoAtencion;
+    }
+
+    public void setTiempoAtencion(int tiempoAtencion) {
+        this.tiempoAtencion = tiempoAtencion;
+    }
+
     @Override
     public String toString() {
         return "dni=" + dni +
                 ", nombre=" + nombre +
                 ", apellido=" + apellido +
-                ", tipoAtencion=" + tipoAtencion;
+                ", tipoAtencion=" + tipoAtencion+
+                ", tiempoAtencion=" + tiempoAtencion;
     }
 
     public String toStringFull() {
