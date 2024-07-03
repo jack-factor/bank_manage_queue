@@ -56,7 +56,8 @@ public class Main {
 
     public static void reportesClientes(AtencionCliente atencionCliente) {
         System.out.println("Nuestras opciones de reportes");
-        System.out.println("1: Estado actual de la cola\n2: Usuarios atendidos\n3: Usuarios atendidos de mayor a menor tiempo\n4: Tiempo total por tipo de atención");
+        System.out.println("1: Estado actual de la cola\n2: Usuarios atendidos\n3: Usuarios atendidos de mayor a menor tiempo" +
+                "\n4: Usuarios atendidos ordenados alfabeticamente \n5: Buscar usuario por nombre y apellido\n6: Tiempo total por tipo de atención");
         Scanner scan = new Scanner(System.in);
         System.out.println("Ingresar opción:");
         int opcion = scan.nextInt();
@@ -73,8 +74,21 @@ public class Main {
         } else if (opcion == 3) {
             System.out.println("Lista de clientes ordenado por tiempo de atención:" +
                     "\n-------------------------------------");
-            atencionCliente.ordenamientoSeleccionCliente();
-        } else if (opcion == 4){
+            atencionCliente.ordenamientoSeleccionClienteTiempo();
+        } else if (opcion == 4) {
+            System.out.println("Lista de clientes ordenado por nombre" +
+                    "\n-------------------------------------");
+            atencionCliente.ordenamientoBurbujaClienteNombre();
+        }else if (opcion == 5){
+            System.out.println("Buscar usuarios");
+            System.out.println("Ingresar Nombre");
+            scan.nextLine();
+            String nombre = scan.nextLine();
+            System.out.println("Ingresar Apellido");
+            String apellido = scan.nextLine();
+            atencionCliente.buscarTodasEstructuraDatos(nombre, apellido);
+        } else if (opcion == 6) {
+            System.out.println("Métrica: Tiempo total por tipo de atención");
             atencionCliente.obtenerRecurisivoElTotalTiempoXTipoAtencion(listaAtencion, 0);
         } else {
             System.out.println("Opción incorrecta");
@@ -93,7 +107,7 @@ public class Main {
         while (true){
             System.out.println("\nCual de las siguientes operaciones desea realizar:" +
                     "\n---------------------------------------\n" +
-                    "a: sacar un tiquet\nb: realizar atención\nc: Reporte\nx: salir");
+                    "a: Sacar un tiquet\nb: Realizar atención\nc: Reporte\nx: Salir");
             otraOperacion = scan.next();
             if(otraOperacion.equals("a")){
                 // sacar ticket
